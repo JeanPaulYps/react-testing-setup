@@ -1,7 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { Dialog, DialogTitle } from "@mui/material";
+import { useState } from "react";
 
 function App() {
+  const [open, setOpen] = useState(true);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +21,9 @@ function App() {
         >
           Learn React
         </a>
+        <Dialog onClose={() => setOpen(prevOpen => !prevOpen)} open={open}>
+          <DialogTitle>Set backup account</DialogTitle>
+        </Dialog>
       </header>
     </div>
   );
